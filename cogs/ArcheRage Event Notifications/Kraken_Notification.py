@@ -18,7 +18,7 @@ class Kraken_Notification(commands.Cog):
             self.scheduler.add_job(self.send_message, CronTrigger.from_crontab(time))
 
     async def send_message(self):
-        channel = self.client.get_channel(1210709248011669594)  # replace with your channel ID
+        channel = self.client.get_channel(1210835743358984203)  # replace with your channel ID
         if channel:
             embed = Embed(
                 title="Kraken",

@@ -12,6 +12,10 @@ class Utility(commands.Cog):
     async def on_ready(self):
         print("Utility Cog Loaded")
 
+    @app_commands.command(name="ping", description="Ping Slash")
+    async def ping(self, interactions: discord.Interaction):
+        await interactions.response.send_message(f'Pong! {round(self.client.latency * 1000)}ms')
+
     @app_commands.command(name="edit-channel-name", description="Edit a channel's name", )
     async def edit_channel_name(self, interactions: discord.Interaction, channel: discord.VoiceChannel, name: str):
         await channel.edit(name=name)
