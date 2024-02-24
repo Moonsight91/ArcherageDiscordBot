@@ -1,0 +1,13 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+../Python Projects/AsiccBot/.idea
+*.iml
+out
+gen
+.env.py
+.env
+.dotenv.py
+.dotenv
+.key
