@@ -8,7 +8,7 @@ from datetime import datetime
 from discord import Embed
 
 
-class Fishers_Day(commands.Cog):
+class Treasure_Hunt_Event(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.scheduler = AsyncIOScheduler(timezone=pytz.timezone('US/Eastern'))
@@ -34,4 +34,4 @@ class Fishers_Day(commands.Cog):
 
 
 async def setup(client):
-    await client.add_cog(Fishers_Day(client))
+    await client.add_cog(Treasure_Hunt_Event(client))

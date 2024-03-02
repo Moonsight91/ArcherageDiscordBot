@@ -8,7 +8,7 @@ from datetime import datetime
 from discord import Embed
 
 
-class Dragon_Hunt(commands.Cog):
+class Gladiator_Tournaments(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.scheduler = AsyncIOScheduler(timezone=pytz.timezone('US/Eastern'))
@@ -37,4 +37,4 @@ class Dragon_Hunt(commands.Cog):
 
 
 async def setup(client):
-    await client.add_cog(Dragon_Hunt(client))
+    await client.add_cog(Gladiator_Tournaments(client))
