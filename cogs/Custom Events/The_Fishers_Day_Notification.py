@@ -29,7 +29,7 @@ class Fishers_Day(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("TESTotification Loaded")
+        print("Fishers_Day_loaded")
         self.scheduler.start()
 
 

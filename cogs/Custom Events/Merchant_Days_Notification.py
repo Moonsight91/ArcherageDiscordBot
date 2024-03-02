@@ -29,7 +29,7 @@ class Merchant_Day(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("TESTotification Loaded")
+        print("Merchants_Day_ Loaded")
         self.scheduler.start()
 
 

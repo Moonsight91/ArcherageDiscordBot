@@ -8,7 +8,7 @@ from datetime import datetime
 from discord import Embed
 
 
-class Dragon_Hunt(commands.Cog):
+class Hasla_Zombies(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.scheduler = AsyncIOScheduler(timezone=pytz.timezone('US/Eastern'))
@@ -32,9 +32,9 @@ class Dragon_Hunt(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("TESTotification Loaded")
+        print("Hazla_Zombies_Event_Notification Loaded")
         self.scheduler.start()
 
 
 async def setup(client):
-    await client.add_cog(Dragon_Hunt(client))
+    await client.add_cog(Hasla_Zombies(client))

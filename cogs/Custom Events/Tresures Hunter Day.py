@@ -29,7 +29,7 @@ class Treasure_Hunt_Event(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("TESTotification Loaded")
+        print("Treasure_Hunt_ Loaded")
         self.scheduler.start()
 
 

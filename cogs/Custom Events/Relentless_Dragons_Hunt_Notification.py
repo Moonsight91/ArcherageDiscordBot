@@ -32,7 +32,7 @@ class Dragon_Hunt(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("TESTotification Loaded")
+        print("Relentless_Dragons_Hunt Loaded")
         self.scheduler.start()
 
 

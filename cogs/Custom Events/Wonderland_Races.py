@@ -32,7 +32,7 @@ class WonderLand_races(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("TESTotification Loaded")
+        print("Wonderland_Race Loaded")
         self.scheduler.start()
 
 
