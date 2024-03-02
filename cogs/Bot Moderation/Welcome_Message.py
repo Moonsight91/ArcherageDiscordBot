@@ -18,8 +18,10 @@ class WelcomeCog(commands.Cog):
         # Add a field to explain verification process
         welcome_embed.add_field(
             name="Verification Process",
-            value="To complete your verification, please navigate to <#1210487753196707921> and use the `/verify` "
-                  "command."
+            value="To complete your verification, Match Server Name to In-game Name please navigate to "
+                  "<#1210487753196707921> and use the Slash Command `/verify` be sure to use https://imgur.com/"
+                  "to upload a picture of your character info for verification "
+
         )
 
         # Fetch avatar URL from member.avatar

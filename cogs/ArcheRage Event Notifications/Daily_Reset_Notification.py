@@ -1,42 +1,34 @@
 import pytz
 from discord.ext import commands
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.triggers.combining import AndTrigger
+
 from apscheduler.triggers.cron import CronTrigger
+from datetime import datetime
 from discord import Embed
 
-class Daily_Reset_Notification(commands.Cog):
+
+class ResetDaily(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.scheduler = AsyncIOScheduler(timezone=pytz.timezone('US/Eastern'))
-
-        # Define cron triggers for each notification time
-        notification_times = [
-            "30 23 * * mon-fri",  # 11:30 PM daily from Monday to Friday
-            "30 23 * * sat,sun",  # 11:30 PM daily on Saturday and Sunday
-        ]
-
-        for time in notification_times:
-            self.scheduler.add_job(self.send_message, CronTrigger.from_crontab(time))
+        self.scheduler.start()
+        dailyReset = AndTrigger([CronTrigger(hour=23, minute=30, day_of_week='mon,tue,wed,thu,fri,sat', timezone=pytz.timezone('US/Eastern'))])
+        self.scheduler.add_job(self.send_message, dailyReset)
 
     async def send_message(self):
         channel = self.client.get_channel(1210835743358984203)  # replace with your channel ID
-        if channel:
-            embed = Embed(
-                title="Daily Reset",
-                description="**Is in 10 Minutes**",
-                color=0xff0000
-            )
-            embed.set_image(url="https://archeage-download1.sea.archeage.com/web/What3.PNG")
-            embed.set_thumbnail(url="https://1000logos.net/wp-content/uploads/2020/09/ArcheAge-logo.png")
-            await channel.send(embed=embed)
+        embed = Embed(title="Daily Reset", description="in 30 Minutes", color=0xff0000)
+        embed.set_thumbnail(
+            url="https://1000logos.net/wp-content/uploads/2020/09/ArcheAge-logo.png")
+
+        self.client.loop.create_task(channel.send(embed=embed))
 
     @commands.Cog.listener()
     async def on_ready(self):
         print("Daily_Reset_Notification")
         self.scheduler.start()
 
-    def cog_unload(self):
-        self.scheduler.shutdown()
 
 async def setup(client):
-    await client.add_cog(Daily_Reset_Notification(client))
+    await client.add_cog(ResetDaily(client))

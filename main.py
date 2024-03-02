@@ -65,7 +65,7 @@ if __name__ == "__main__":
     async def main():
         bot = Client()
         await bot.load_cogs()
-        await bot.start('MTIxMDQ3Njg1NjgxMDQwNTg5OA.GXAiF1.W0xlz0sd9R_qSI7Hm8heix0akGsBS1IknHxvr4')
+        await bot.start('MTIxMDQ3Njg1NjgxMDQwNTg5OA.GumiWo.G4U_gMBfLLLso-ufwYXTV7mVWBeDJXgCINkjgY')
 
 
     asyncio.run(main())
