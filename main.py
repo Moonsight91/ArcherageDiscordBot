@@ -65,7 +65,7 @@ if __name__ == "__main__":
     async def main():
         bot = Client()
         await bot.load_cogs()
-        await bot.start('MTIxMDQ3Njg1NjgxMDQwNTg5OA.GumiWo.G4U_gMBfLLLso-ufwYXTV7mVWBeDJXgCINkjgY')
+        await bot.start('DISCORD_TOKEN')
 
 
     asyncio.run(main())
